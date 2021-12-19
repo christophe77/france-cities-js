@@ -1,6 +1,6 @@
 {
   "name": "france-cities-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Search and get informations about french cities from the package offline database",
   "keywords": [
     "cities",
