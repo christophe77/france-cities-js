@@ -1,3 +1,5 @@
-export * as city from './search/city';
-export * as department from './search/department';
-export * as region from './search/region';
+import { searchCity } from './search/city';
+import { searchDepartment } from './search/department';
+import { searchRegion } from './search/region';
+
+export { searchCity, searchDepartment, searchRegion };

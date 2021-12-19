@@ -1,7 +1,7 @@
 import { departments } from '../../constants';
 import { Department } from '../../types';
 
-export function byName(name: string, limit?: number): Department[] {
+function byName(name: string, limit?: number): Department[] {
   const tempDepartments: Department[] = [];
   departments.forEach((department: Department) => {
     if (department.slug.includes(name)) {
@@ -10,7 +10,7 @@ export function byName(name: string, limit?: number): Department[] {
   });
   return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
-export function byDepartmentCode(
+function byDepartmentCode(
   departmentCode: string,
   limit?: number,
 ): Department[] {
@@ -22,7 +22,7 @@ export function byDepartmentCode(
   });
   return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
-export function byRegionCode(regionCode: string, limit?: number): Department[] {
+function byRegionCode(regionCode: string, limit?: number): Department[] {
   const tempDepartments: Department[] = [];
   departments.forEach((department: Department) => {
     if (department.region_code.includes(regionCode)) {
@@ -31,3 +31,9 @@ export function byRegionCode(regionCode: string, limit?: number): Department[] {
   });
   return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
+
+export const searchDepartment = {
+  byName,
+  byDepartmentCode,
+  byRegionCode,
+};

@@ -1,5 +1,5 @@
 import { cities } from '../../constants';
-export function byName(name, limit) {
+function byName(name, limit) {
     var tempCities = [];
     cities.forEach(function (city) {
         if (city.slug.includes(name)) {
@@ -8,7 +8,7 @@ export function byName(name, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-export function byZipCode(zipCode, limit) {
+function byZipCode(zipCode, limit) {
     var tempCities = [];
     cities.forEach(function (city) {
         if (city.zip_code.includes(zipCode)) {
@@ -17,7 +17,7 @@ export function byZipCode(zipCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-export function byInseeCode(inseeCode, limit) {
+function byInseeCode(inseeCode, limit) {
     var tempCities = [];
     cities.forEach(function (city) {
         if (city.insee_code.includes(inseeCode)) {
@@ -26,7 +26,7 @@ export function byInseeCode(inseeCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-export function byDepartmentCode(departmentCode, limit) {
+function byDepartmentCode(departmentCode, limit) {
     var tempCities = [];
     cities.forEach(function (city) {
         if (city.department_code.includes(departmentCode)) {
@@ -35,3 +35,9 @@ export function byDepartmentCode(departmentCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
+export var searchCity = {
+    byName: byName,
+    byDepartmentCode: byDepartmentCode,
+    byInseeCode: byInseeCode,
+    byZipCode: byZipCode,
+};

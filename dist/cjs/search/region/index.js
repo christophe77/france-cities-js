@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.byCode = exports.byName = void 0;
+exports.searchRegion = void 0;
 var constants_1 = require("../../constants");
 function byName(name, limit) {
     var tempRegions = [];
@@ -11,7 +11,6 @@ function byName(name, limit) {
     });
     return limit ? tempRegions.slice(0, limit) : tempRegions;
 }
-exports.byName = byName;
 function byCode(code, limit) {
     var tempRegions = [];
     constants_1.regions.forEach(function (region) {
@@ -21,4 +20,7 @@ function byCode(code, limit) {
     });
     return limit ? tempRegions.slice(0, limit) : tempRegions;
 }
-exports.byCode = byCode;
+exports.searchRegion = {
+    byName: byName,
+    byCode: byCode,
+};

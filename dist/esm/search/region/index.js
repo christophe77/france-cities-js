@@ -1,5 +1,5 @@
 import { regions } from '../../constants';
-export function byName(name, limit) {
+function byName(name, limit) {
     var tempRegions = [];
     regions.forEach(function (region) {
         if (region.slug.includes(name)) {
@@ -8,7 +8,7 @@ export function byName(name, limit) {
     });
     return limit ? tempRegions.slice(0, limit) : tempRegions;
 }
-export function byCode(code, limit) {
+function byCode(code, limit) {
     var tempRegions = [];
     regions.forEach(function (region) {
         if (region.code.includes(code)) {
@@ -17,3 +17,7 @@ export function byCode(code, limit) {
     });
     return limit ? tempRegions.slice(0, limit) : tempRegions;
 }
+export var searchRegion = {
+    byName: byName,
+    byCode: byCode,
+};

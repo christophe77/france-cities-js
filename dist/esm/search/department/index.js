@@ -1,5 +1,5 @@
 import { departments } from '../../constants';
-export function byName(name, limit) {
+function byName(name, limit) {
     var tempDepartments = [];
     departments.forEach(function (department) {
         if (department.slug.includes(name)) {
@@ -8,7 +8,7 @@ export function byName(name, limit) {
     });
     return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
-export function byDepartmentCode(departmentCode, limit) {
+function byDepartmentCode(departmentCode, limit) {
     var tempDepartments = [];
     departments.forEach(function (department) {
         if (department.code.includes(departmentCode)) {
@@ -17,7 +17,7 @@ export function byDepartmentCode(departmentCode, limit) {
     });
     return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
-export function byRegionCode(regionCode, limit) {
+function byRegionCode(regionCode, limit) {
     var tempDepartments = [];
     departments.forEach(function (department) {
         if (department.region_code.includes(regionCode)) {
@@ -26,3 +26,8 @@ export function byRegionCode(regionCode, limit) {
     });
     return limit ? tempDepartments.slice(0, limit) : tempDepartments;
 }
+export var searchDepartment = {
+    byName: byName,
+    byDepartmentCode: byDepartmentCode,
+    byRegionCode: byRegionCode,
+};

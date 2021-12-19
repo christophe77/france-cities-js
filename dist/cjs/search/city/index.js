@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.byDepartmentCode = exports.byInseeCode = exports.byZipCode = exports.byName = void 0;
+exports.searchCity = void 0;
 var constants_1 = require("../../constants");
 function byName(name, limit) {
     var tempCities = [];
@@ -11,7 +11,6 @@ function byName(name, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-exports.byName = byName;
 function byZipCode(zipCode, limit) {
     var tempCities = [];
     constants_1.cities.forEach(function (city) {
@@ -21,7 +20,6 @@ function byZipCode(zipCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-exports.byZipCode = byZipCode;
 function byInseeCode(inseeCode, limit) {
     var tempCities = [];
     constants_1.cities.forEach(function (city) {
@@ -31,7 +29,6 @@ function byInseeCode(inseeCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-exports.byInseeCode = byInseeCode;
 function byDepartmentCode(departmentCode, limit) {
     var tempCities = [];
     constants_1.cities.forEach(function (city) {
@@ -41,4 +38,9 @@ function byDepartmentCode(departmentCode, limit) {
     });
     return limit ? tempCities.slice(0, limit) : tempCities;
 }
-exports.byDepartmentCode = byDepartmentCode;
+exports.searchCity = {
+    byName: byName,
+    byDepartmentCode: byDepartmentCode,
+    byInseeCode: byInseeCode,
+    byZipCode: byZipCode,
+};
