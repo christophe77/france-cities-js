@@ -1,0 +1,54 @@
+{
+  "name": "france-cities-js",
+  "version": "0.0.1",
+  "description": "Search and get informations about french cities from the package offline database",
+  "keywords": [
+    "cities",
+    "villes",
+    "france",
+    "french"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophe77/france-cities-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christophe77/france-cities-js/issues"
+  },
+  "homepage": "https://github.com/christophe77/france-cities-js#readme",
+  "author": "christophe bellec",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "prepublish": "yarn build",
+    "test": "jest --coverage",
+    "test:badges": "jest --coverage && yarn jest-coverage-badges-ts",
+    "test-watch": "jest --verbose --watchAll",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "jest": "^27.3.1",
+    "jest-coverage-badges-ts": "^0.1.4",
+    "memfs": "^3.4.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  },
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
+  },
+  "peerDependencies": {},
+  "license": "ISC",
+  "dependencies": {
+    "@types/superagent": "^4.1.13",
+    "superagent": "^6.1.0"
+  }
+}
