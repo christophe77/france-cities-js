@@ -1,6 +1,6 @@
 {
   "name": "france-cities-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Search and get informations about french cities from the package offline database",
   "keywords": [
     "cities",
@@ -17,13 +17,13 @@
   },
   "homepage": "https://github.com/christophe77/france-cities-js#readme",
   "author": "christophe bellec",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./esm/index.d.ts",
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
     "prepublish": "yarn build",
     "test": "jest --coverage",
     "test:badges": "jest --coverage && yarn jest-coverage-badges-ts",
